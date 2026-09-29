@@ -1,0 +1,93 @@
+# =============================================================================
+# DIC correlation run configuration: every option, at its default where one exists
+#
+# Usage:
+#   icorr run --config run.toml --output-dir results/
+#   icorr run --config run.toml --output-archive results/run.icorr
+#
+# Any value can be overridden on the command line without editing the file. The
+# value is read as TOML, so a string keeps its quotes inside the shell quotes:
+#   icorr run --config run.toml --output-dir results/ \
+#       --set 'correlation.search.method="pyramid"' \
+#       --set correlation.match_threshold=0.75
+#
+# Paths:
+#   - session.image_dir resolves relative to this file's directory, unless
+#     --image-dir is given on the command line. An absolute image_dir is used
+#     as it is, even with --image-dir.
+#   - setup.roi_mask and session.explicit_frame_list always resolve relative
+#     to this file's directory.
+# =============================================================================
+
+
+[session]
+# Directory holding the reference and deformed frames (TIFF only).
+image_dir = "./frames"
+
+# Selection of the deformed frames: "all" | "stride" | "explicit"
+mode = "all"
+
+# Reference (undeformed) frame. Optional for "all" and "stride", where it
+# defaults to the first frame in natural order (img_2 before img_10); required
+# for "explicit".
+# reference_frame = "img_0000.tiff"
+
+# --- mode = "stride" ---------------------------------------------------------
+# Every Nth frame after the reference frame. stride_n is a key of [session]
+# itself, not of a [session.stride] sub-table.
+# stride_n = 5
+
+# --- mode = "explicit" -------------------------------------------------------
+# The deformed frames are listed in a text file, one filename per line, with
+# "#" comments allowed. reference_frame is then required and must not appear
+# in the list. explicit_frame_list is a key of [session] itself.
+# explicit_frame_list = "run_frames.txt"
+
+
+[setup]
+subset_size = 21               # pixels, odd
+step_size = 10                 # pixels between subset centres
+calibration_mm_per_px = 0.05   # physical scale; 1.0 (the default) reports pixels
+
+# Optional binary mask exported as TIFF (white inside the ROI). Without it the
+# whole reference frame is used.
+# roi_mask = "roi.tiff"
+
+
+[correlation]
+search_size = 61                # pixels, odd; must exceed setup.subset_size
+                                # (checked when the engine is built)
+correlation_mode = "spatial"    # "spatial" (direct: against the reference) | "incremental" (against the previous frame)
+tracking_mode = "eulerian"      # "eulerian" | "lagrangian"; incremental correlation requires "lagrangian"
+criterion_name = "znssd"        # "znssd" | "zncc"
+match_threshold = 0.60          # 0.0 to 1.0
+n_workers = 2
+
+[correlation.search]
+method = "brute"                # "brute" | "pyramid"
+
+# Used only when method = "pyramid":
+pyramid_levels = 3
+pyramid_downsample_factor = 2   # must exceed 1
+pyramid_fine_window = 8
+
+[correlation.refinement]
+method = "icgn"                 # "icgn", the only method
+shape_function = "affine"       # "affine" | "quadratic"
+
+[correlation.strain]
+method = "lagrange_cloud"       # "lagrange_cloud" | "lagrange_q4" | "lagrange_q9"
+strain_window = 5               # grid nodes, odd; lagrange_q4 and lagrange_q9 only (q9 needs 5 or more)
+
+radius_px = 15.0                # lagrange_cloud only
+min_neighbors = 4               # lagrange_cloud only, at least 3
+
+[correlation.image_interpolation]
+method = "biquintic_spline"     # "biquintic_spline" | "bicubic_spline" | "8tap"
+
+[correlation.recovery]
+enabled = false                 # incremental correlation only
+max_lost_frames = 2
+continuity_tol_px = 5.0
+fit_radius = 3
+min_fit_points = 6

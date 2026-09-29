@@ -1,0 +1,16 @@
+.direnv
+.devenv
+
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.vscode/
+
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+results/
+build/
+dist/

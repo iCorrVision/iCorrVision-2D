@@ -1,0 +1,38 @@
+# Minimal run configuration using the engine defaults.
+# See template.toml for every option and its allowed values.
+#   icorr run --config run.toml --output-dir results/
+
+[session]
+image_dir = "."
+mode = "all"
+
+[setup]
+subset_size = 15
+step_size = 3
+# roi_mask = "roi.tiff"
+
+[correlation]
+search_size = 61
+correlation_mode = "spatial"
+tracking_mode = "eulerian"
+criterion_name = "znssd"
+match_threshold = 0.60
+n_workers = 2
+
+[correlation.search]
+method = "brute"
+
+[correlation.refinement]
+method = "icgn"
+shape_function = "affine"
+
+[correlation.strain]
+method = "lagrange_cloud"
+radius_px = 15.0
+min_neighbors = 4
+
+[correlation.image_interpolation]
+method = "biquintic_spline"
+
+[correlation.recovery]
+enabled = false

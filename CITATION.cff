@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the thesis below."
+title: "iCorrVision 2D"
+type: software
+version: "2.0.0"
+date-released: "2026-09-30"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/iCorrVision/iCorrVision-2D"
+authors:
+  - family-names: "Récio"
+    given-names: "João Pedro da Silva Duarte"
+preferred-citation:
+  type: thesis
+  thesis-type: "MSc thesis"
+  title: "iCorrVision 2.0: Development and Metrological Assessment of Modular Software for Two-Dimensional Digital Image Correlation"
+  authors:
+    - family-names: "Récio"
+      given-names: "João Pedro da Silva Duarte"
+  institution:
+    name: "NOVA School of Science and Technology (NOVA FCT)"
+  year: 2026
