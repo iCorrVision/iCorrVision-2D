@@ -9,6 +9,16 @@ repository-code: "https://github.com/iCorrVision/iCorrVision-2D"
 authors:
   - family-names: "Récio"
     given-names: "João Pedro da Silva Duarte"
+abstract: >-
+  Version 2 of iCorrVision 2D: a subset-based two-dimensional digital image
+  correlation (DIC) engine, usable as a Python package, from the command line or
+  through a PySide6 graphical interface. It is a reimplementation that shares no
+  code with iCorrVision-2D version 1 (SoftwareX, 2022).
+keywords:
+  - digital image correlation
+  - experimental mechanics
+  - strain measurement
+  - Python
 preferred-citation:
   type: thesis
   thesis-type: "MSc thesis"
@@ -19,3 +29,32 @@ preferred-citation:
   institution:
     name: "NOVA School of Science and Technology (NOVA FCT)"
   year: 2026
+references:
+  - type: article
+    title: "iCorrVision-2D: An integrated python-based open-source Digital Image Correlation software for in-plane measurements (Part 1)"
+    authors:
+      - family-names: "de Deus Filho"
+        given-names: "João Carlos Andrade"
+      - family-names: "da Silva Nunes"
+        given-names: "Luiz Carlos"
+      - family-names: "Xavier"
+        given-names: "José Manuel Cardoso"
+    journal: "SoftwareX"
+    volume: 19
+    start: 101131
+    year: 2022
+    doi: "10.1016/j.softx.2022.101131"
+  - type: article
+    title: "iCorrVision-3D: An integrated python-based open-source Digital Image Correlation Software for in-plane and out-of-plane measurements (Part 2)"
+    authors:
+      - family-names: "de Deus Filho"
+        given-names: "João Carlos Andrade"
+      - family-names: "da Silva Nunes"
+        given-names: "Luiz Carlos"
+      - family-names: "Xavier"
+        given-names: "José Manuel Cardoso"
+    journal: "SoftwareX"
+    volume: 19
+    start: 101132
+    year: 2022
+    doi: "10.1016/j.softx.2022.101132"

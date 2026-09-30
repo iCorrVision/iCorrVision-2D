@@ -1,7 +1,13 @@
-# iCorrVision 2D
+# iCorrVision 2D (version 2)
 
 A subset-based 2D digital image correlation (DIC) engine, usable as a Python package
 (`icorrvision`), from the command line (`icorr`), or through a PySide6 graphical interface.
+
+> [!NOTE]
+> This is **version 2** of iCorrVision 2D, released in 2026. It is a reimplementation that
+> shares no code with **iCorrVision-2D version 1** (de Deus Filho, da Silva Nunes and Xavier,
+> *SoftwareX*, 2022), which remains available unchanged. See
+> [Relation to iCorrVision version 1](#relation-to-icorrvision-version-1).
 
 This is the software of the MSc thesis *iCorrVision 2.0: Development and Metrological Assessment of Modular Software for Two-Dimensional Digital Image Correlation* (João Pedro da Silva Duarte Récio, NOVA FCT, 2026), supervised by José Manuel Cardoso Xavier. The tag `v2.0.0-msc` is the version the thesis cites.
 
@@ -76,9 +82,38 @@ The results of the thesis were obtained with Python 3.12.13, NumPy 2.5.3, SciPy 
 OpenCV 5.0.0, Numba 0.67.0 and PyOpenCL 2026.1.4 on NixOS (Linux). `pyproject.toml` gives lower
 bounds only, so a new installation may use newer versions.
 
+## Relation to iCorrVision version 1
+
+iCorrVision was first released in 2022 as two Tkinter applications, iCorrVision-2D and
+iCorrVision-3D, developed in the doctoral work of J. C. A. de Deus Filho and published as
+companion articles in *SoftwareX*. Version 2 is a new implementation. It shares no code with
+version 1, separates the correlation engine from the interface, and can be used as a Python
+package, from the command line or through a PySide6 interface. In version 2, image acquisition
+is a separate application, iCorrVision Grabber. Version 1 has not changed since June 2022 and
+remains available.
+
+| Version | Application | Toolkit | Repository |
+| --- | --- | --- | --- |
+| 1 (2022) | iCorrVision-2D | Tkinter | [jcadf/iCorrVision_2D](https://github.com/jcadf/iCorrVision_2D); journal copy [ElsevierSoftwareX/SOFTX-D-22-00075](https://github.com/ElsevierSoftwareX/SOFTX-D-22-00075) |
+| 1 (2022) | iCorrVision-3D | Tkinter | [jcadf/iCorrVision_3D](https://github.com/jcadf/iCorrVision_3D); journal copy [ElsevierSoftwareX/SOFTX-D-22-00076](https://github.com/ElsevierSoftwareX/SOFTX-D-22-00076) |
+| 2 (2026) | iCorrVision 2D (this repository) | PySide6 | [iCorrVision/iCorrVision-2D](https://github.com/iCorrVision/iCorrVision-2D) |
+| 2 (2026) | iCorrVision Grabber | PySide6 | [iCorrVision/iCorrVision-Grabber](https://github.com/iCorrVision/iCorrVision-Grabber) |
+| 2, planned | iCorrVision 3D | | |
+
 ## Citation
 
-See `CITATION.cff`, or use GitHub's "Cite this repository" button.
+See `CITATION.cff`, or use GitHub's "Cite this repository" button. Please give the version
+(2.0.0), so that the citation is not mistaken for iCorrVision-2D version 1.
+
+Version 1 is described in:
+
+- J. C. A. de Deus Filho, L. C. da Silva Nunes, J. M. C. Xavier, "iCorrVision-2D: An integrated
+  python-based open-source Digital Image Correlation software for in-plane measurements (Part 1)",
+  *SoftwareX* 19 (2022) 101131. <https://doi.org/10.1016/j.softx.2022.101131>
+- J. C. A. de Deus Filho, L. C. da Silva Nunes, J. M. C. Xavier, "iCorrVision-3D: An integrated
+  python-based open-source Digital Image Correlation Software for in-plane and out-of-plane
+  measurements (Part 2)", *SoftwareX* 19 (2022) 101132.
+  <https://doi.org/10.1016/j.softx.2022.101132>
 
 ## Licence
 
