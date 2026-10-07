@@ -49,7 +49,9 @@
 
     venv = {
       enable = true;
-      requirements = ./requirements.txt;
+      # requirements.txt plus the project itself, installed in editable mode so that
+      # `import icorrvision` runs the code in src/. devenv runs pip from the project root.
+      requirements = builtins.readFile ./requirements.txt + "-e .\n";
     };
   };
 
@@ -63,7 +65,7 @@
   };
 
   env.OCL_ICD_VENDORS = "/run/opengl-driver/etc/OpenCL/vendors"; # where NixOS registers the drivers
-  # The two settings below were used for the OpenCL route in notebooks/acceleration_routes.ipynb
+  # The two settings below were used for the OpenCL route in benchmarks/acceleration_routes.ipynb
   # on the machine the thesis results were produced on (AMD Radeon RX 6700 XT); with current drivers
   # that route also runs without them. They are specific to that hardware: enable them only on a
   # similar AMD RDNA2 GPU if OpenCL finds no device.
@@ -98,7 +100,7 @@
       xorg.xcbutilcursor
     ])}"
     export QT_PLUGIN_PATH="$PYSIDE6_DIR/Qt/plugins"
-    python3 -m core.main
+    python3 -m icorrvision.gui.main
   '';
 
   enterShell = ''

@@ -21,25 +21,28 @@ pip install ".[gui]"     # with the graphical interface
 ```
 
 Optional extras: `notebooks` (Jupyter and pandas, for the notebooks below) and
-`acceleration` (numba and pyopencl, for `notebooks/acceleration_routes.ipynb` only).
+`acceleration` (numba and pyopencl, for `benchmarks/acceleration_routes.ipynb` only).
 
 A self-contained Windows executable of the graphical interface is built with PyInstaller by the
-repository's GitHub Actions workflow on every push to `main`; it is available as the
+repository's GitHub Actions workflow on every push and pull request to `main`; it is available as the
 `icorr-correlation-windows` artifact of the workflow run.
 
 ## Use
 
-- **Graphical interface:** `python -m core.main`
-- **Command line:** set `image_dir` in `run.toml` to a folder of TIFF frames, then
-  `icorr run --config run.toml --output-dir results/`. `template.toml` lists every
-  configuration option and its allowed values.
-- **Python API:** `example/api_tour.ipynb` walks through the public API on synthetic images.
+- **Graphical interface:** `python -m icorrvision.gui.main`
+- **Command line:** set `image_dir` in `examples/run.toml` to a folder of TIFF frames, then
+  `icorr run --config examples/run.toml --output-dir results/`. `examples/template.toml` lists
+  every configuration option and its allowed values.
+- **Python API:** `examples/api_tour.ipynb` walks through the public API on synthetic images.
 
 ## Notebooks
 
-`notebooks/` holds the validation and timing studies reported in the thesis. The DIC Challenge
-images are not included; download them from the DIC Challenge and point the notebooks at them
-through environment variables:
+`validation/notebooks/` holds the validation studies and `benchmarks/` the timing studies reported
+in the thesis. The notebooks import the installed package, so install it first, in editable mode
+while developing (`pip install -e ".[notebooks]"`; the devenv shell does this itself). They also
+import `validation/` and `examples/synthetic.py` from the repository, which they locate from
+their own folder. The DIC Challenge images are not included; download them from the DIC
+Challenge and point the notebooks at them through environment variables:
 
 | Variable | Contents |
 | --- | --- |
@@ -59,14 +62,14 @@ jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeou
 
 | Notebook | Purpose | Data | Run time | Thesis |
 | --- | --- | --- | --- | --- |
-| `example/api_tour` | Executable walkthrough of the public interface, with PySide6 made unimportable | synthetic | 2 min | Section 5.3 |
-| `notebooks/sample03_interpolation_bias` | Interpolation bias of the three interpolants | Sample 3 | 5 min | Section 5.4 |
-| `notebooks/sample12_vsg_study` | Virtual strain gauge and agreement between strain estimators | Sample 12 | 5 min | Section 5.5 |
-| `notebooks/star1_shape_function_theory` | Spatial resolution against the Savitzky–Golay prediction | Star 1 | 1 min | Section 5.6 |
-| `notebooks/star56_mei` | Metrological efficiency and placement among the Challenge participants | Stars 5, 6; participant results | 45 min | Section 5.7 |
-| `notebooks/parallel_scaling` | Determinism, speed-up and memory with worker threads | synthetic | 11 min | Section 5.3.3 |
-| `notebooks/process_scaling` | Frames distributed over processes (Linux only) | synthetic | 15 min | Section 5.3.3 |
-| `notebooks/acceleration_routes` | Profile of the engine and benchmark of compiled and GPU forms of the refinement | synthetic | 1 min | Section 5.3.4 |
+| `examples/api_tour` | Executable walkthrough of the public interface, with PySide6 made unimportable | synthetic | 2 min | Section 5.3 |
+| `validation/notebooks/sample03_interpolation_bias` | Interpolation bias of the three interpolants | Sample 3 | 5 min | Section 5.4 |
+| `validation/notebooks/sample12_vsg_study` | Virtual strain gauge and agreement between strain estimators | Sample 12 | 5 min | Section 5.5 |
+| `validation/notebooks/star1_shape_function_theory` | Spatial resolution against the Savitzky–Golay prediction | Star 1 | 1 min | Section 5.6 |
+| `validation/notebooks/star56_mei` | Metrological efficiency and placement among the Challenge participants | Stars 5, 6; participant results | 45 min | Section 5.7 |
+| `benchmarks/parallel_scaling` | Determinism, speed-up and memory with worker threads | synthetic | 11 min | Section 5.3.3 |
+| `benchmarks/process_scaling` | Frames distributed over processes (Linux only) | synthetic | 15 min | Section 5.3.3 |
+| `benchmarks/acceleration_routes` | Profile of the engine and benchmark of compiled and GPU forms of the refinement | synthetic | 1 min | Section 5.3.4 |
 
 - `star56_mei` compares the participant MEI values of every execution with the frozen values in
   `data/star56/`, reports any value that changed by more than 1 %, and stops if the frozen file is

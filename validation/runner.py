@@ -36,9 +36,9 @@ import pandas as pd
 from .metrics import compute_metrics, virtual_strain_gauge
 from .truth import GroundTruth, NoGroundTruthError
 
-from components.archive.manifest import MANIFEST_NAME, read_manifest
+from icorrvision.io.archive.manifest import MANIFEST_NAME, read_manifest
 
-# Columns the engine's CSV export always provides; see components/preview/export.py
+# Columns the engine's CSV export always provides; see src/icorrvision/io/export.py
 _REQUIRED_COLUMNS = {
     "frame_index",
     "row_index",
@@ -152,7 +152,7 @@ def run_one(
     out_root: Path,
     *,
     python: str = "python",
-    module: str = "cli.main",
+    module: str = "icorrvision.cli.main",
     repo_root: Path | None = None,
     timeout_s: float | None = None,
     force: bool = False,

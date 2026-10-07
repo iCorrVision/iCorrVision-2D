@@ -29,10 +29,10 @@ dev = ["black", "isort", "mypy", "scipy-stubs"]
 Repository = "https://github.com/iCorrVision/iCorrVision-2D"
 
 [project.scripts]
-icorr = "cli.main:main"
+icorr = "icorrvision.cli.main:main"
 
 [tool.setuptools.packages.find]
-include = ["icorrvision*", "components*", "core*", "cli*", "UI*"]
+where = ["src"]
 
 [tool.pyright]
 typeCheckingMode = "basic"

@@ -6,8 +6,8 @@ depend on them.
 
 | File | Used by | Provenance |
 | --- | --- | --- |
-| `sample12/roi.tiff` | `notebooks/sample12_vsg_study.ipynb` | Region of interest for DIC Challenge 1.0 Sample 12, drawn by the author: the specimen with its central hole excluded. White marks the region of interest. |
-| `star56/participant_mei_frozen.csv` | `notebooks/star56_mei.ipynb` | Code MEI of each participant of the DIC Challenge 2.0 Stars 5 and 6, computed by that notebook from the participants' submitted line cuts and frozen once the participant results had been checked against the published figures. |
+| `sample12/roi.tiff` | `validation/notebooks/sample12_vsg_study.ipynb` | Region of interest for DIC Challenge 1.0 Sample 12, drawn by the author: the specimen with its central hole excluded. White marks the region of interest. |
+| `star56/participant_mei_frozen.csv` | `validation/notebooks/star56_mei.ipynb` | Code MEI of each participant of the DIC Challenge 2.0 Stars 5 and 6, computed by that notebook from the participants' submitted line cuts and frozen once the participant results had been checked against the published figures. |
 
 `participant_mei_frozen.csv` has one row per participant code and quantity, with the columns
 `quantity` (`displacement` or `strain`), `code` and `code_mei`. It is the reference of the
