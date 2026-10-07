@@ -3,6 +3,22 @@
 All notable changes to iCorrVision 2D are recorded here. Versions follow
 [semantic versioning](https://semver.org/).
 
+## Unreleased
+
+- **One installed package.** The code moved into `src/icorrvision/`, which is now the only package
+  the wheel installs; 2.0.0 also installed the generic top-level packages `components`, `core`,
+  `cli` and `UI`. Its subpackages are `engine` (with `engine.pipeline`), `config`, `io`,
+  `results`, `cli` and `gui`. Only `gui` imports Qt, and no subpackage imports `gui` or `cli`
+  except `gui` and `cli` themselves.
+- The public interface (`import icorrvision`) and the `icorr` command are unchanged. Code that
+  imported internal modules must use their new paths, e.g. `components.archive.manifest` is now
+  `icorrvision.io.archive.manifest`.
+- The graphical interface starts with `python -m icorrvision.gui.main` (was
+  `python -m core.main`).
+- `run.toml`, `template.toml` and the API tour moved to `examples/`, the validation notebooks to
+  `validation/notebooks/` and the timing notebooks to `benchmarks/`.
+- The Windows build workflow also runs on pull requests to `main`.
+
 ## 2.0.0 (tag `v2.0.0-msc`)
 
 First release of iCorrVision 2D 2.0, the version evaluated in the MSc thesis *iCorrVision 2.0:

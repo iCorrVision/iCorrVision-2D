@@ -1,8 +1,9 @@
 """Public API of the iCorrVision 2.0 correlation engine.
 
 Import from here and nowhere else. Every name below is a deliberate part of the
-API; everything under ``components`` that is not re-exported here is internal
-and may move without notice. This module contains no logic: it only re-exports
+API; everything in the subpackages (``icorrvision.engine``, ``icorrvision.io``
+and the rest) that is not re-exported here is internal and may move without
+notice. This module contains no logic: it only re-exports
 objects defined elsewhere, so ``icorrvision.build_engine`` *is* the factory's
 ``build_engine``, not a wrapper around it.
 
