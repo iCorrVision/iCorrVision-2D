@@ -3,6 +3,8 @@ name: Build Windows exe
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -19,8 +21,8 @@ jobs:
       - run: >
           pyinstaller --onedir --collect-all PySide6
           --name icorr-correlation
-          --paths .
-          core/main.py
+          --paths src
+          src/icorrvision/gui/main.py
 
       - uses: actions/upload-artifact@v4
         with:
