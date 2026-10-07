@@ -5,15 +5,15 @@ from typing import Callable
 
 import numpy as np
 import cv2
-from components.contracts import (
+from icorrvision.contracts import (
     CorrelationConfig,
     SetupOutput,
     build_correlation_config,
     check_keys,
     from_table,
 )
-from components.session.folder import folder_loader, list_frames
-from .schema import RunConfig, SessionConfig, SetupConfig
+from icorrvision.io.folder import folder_loader, list_frames
+from icorrvision.config.schema import RunConfig, SessionConfig, SetupConfig
 
 # ------------------------------------------------------------------
 # Parsing + overrides

@@ -13,10 +13,10 @@ from PySide6.QtWidgets import (
     QCheckBox,
 )
 
-from components.contracts import HeatmapPayload
+from icorrvision.contracts import HeatmapPayload
 
-from .payload import ColorScale
-from .render import HeatmapFigure
+from icorrvision.results.payload import ColorScale
+from icorrvision.results.render import HeatmapFigure
 
 
 class PlotView(QWidget):

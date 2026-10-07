@@ -3,7 +3,7 @@ from pathlib import Path
 from PySide6.QtCore import QObject, Signal
 from PySide6.QtWidgets import QFileDialog
 
-from .view import MenuBar
+from icorrvision.gui.menu.view import MenuBar
 
 
 class MenuPresenter(QObject):

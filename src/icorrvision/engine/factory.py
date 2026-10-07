@@ -2,28 +2,28 @@ from collections.abc import Callable
 
 import numpy as np
 
-from components.contracts import CorrelationConfig, SetupOutput
-from components.correlation.pipeline.shape_function import (
+from icorrvision.contracts import CorrelationConfig, SetupOutput
+from icorrvision.engine.pipeline.shape_function import (
     AffineShapeFunction,
     QuadraticShapeFunction,
 )
-from components.correlation.pipeline.interpolation import (
+from icorrvision.engine.pipeline.interpolation import (
     EightTapInterpolator,
     BicubicSplineInterpolator,
     BiquinticSplineInterpolator,
 )
-from components.correlation.pipeline.criteria import ZNCCCriterion, ZNSSDCriterion
-from components.correlation.pipeline.search import (
+from icorrvision.engine.pipeline.criteria import ZNCCCriterion, ZNSSDCriterion
+from icorrvision.engine.pipeline.search import (
     BruteSearch,
     PyramidSearch,
 )
-from components.correlation.pipeline.refinement import ICGNRefinement
-from components.correlation.pipeline.tensors import (
+from icorrvision.engine.pipeline.refinement import ICGNRefinement
+from icorrvision.engine.pipeline.tensors import (
     PointCloudGreenLagrangeStrain,
     WindowGreenLagrangeStrain,
 )
-from .engine import CorrelationEngine
-from .recovery import HistoryRecovery
+from icorrvision.engine.engine import CorrelationEngine
+from icorrvision.engine.recovery import HistoryRecovery
 
 
 CRITERION_REGISTRY = {

@@ -15,12 +15,12 @@ from PySide6.QtWidgets import (
     QMessageBox,
 )
 
-from components.correlation.pipeline.search import (
+from icorrvision.engine.pipeline.search import (
     MIN_COARSE_SUBSET_PX,
     coarsest_pyramid_subset,
 )
-from components.correlation.pipeline.tensors import minimum_cloud_radius
-from components.contracts import (
+from icorrvision.engine.pipeline.tensors import minimum_cloud_radius
+from icorrvision.contracts import (
     CorrelationConfig,
     InterpolationConfig,
     RefinementConfig,

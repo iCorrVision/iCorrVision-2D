@@ -10,8 +10,8 @@ from PySide6.QtGui import (
     QPolygonF,
 )
 
-from UI.frame_display import FrameDisplay
-from components.setup.roi_drawer import (
+from icorrvision.gui.widgets.frame_display import FrameDisplay
+from icorrvision.gui.setup.roi_drawer import (
     CanvasMode,
     SelectionOp,
     CanvasTool,

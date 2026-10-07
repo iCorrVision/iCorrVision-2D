@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 import numpy as np
 from scipy.spatial import cKDTree
 
-from components.contracts import SetupOutput, StrainConfig, StrainField
+from icorrvision.contracts import SetupOutput, StrainConfig, StrainField
 
 
 def cloud_neighbour_count(radius_px: float, step_size: int) -> int:

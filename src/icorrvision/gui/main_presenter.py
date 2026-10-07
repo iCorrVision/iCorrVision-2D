@@ -7,26 +7,26 @@ import numpy as np
 from PySide6.QtCore import QObject, QThread, Signal, Slot, Qt
 from PySide6.QtWidgets import QMessageBox, QProgressDialog
 
-from components.menu.presenter import MenuPresenter
-from components.console_logger import ConsoleLogger
-from components.contracts import (
+from icorrvision.gui.menu.presenter import MenuPresenter
+from icorrvision.gui.console_logger import ConsoleLogger
+from icorrvision.contracts import (
     CorrelationResult,
     SessionOutput,
     SetupOutput,
     CorrelationConfig,
 )
-from components.session.folder import FolderParser
-from components.session.presenter import SessionPresenter
-from components.setup.presenter import SetupPresenter
-from components.archive.reader import read_icorr_archive, LoadedArchive
+from icorrvision.io.folder import FolderParser
+from icorrvision.gui.session.presenter import SessionPresenter
+from icorrvision.gui.setup.presenter import SetupPresenter
+from icorrvision.io.archive.reader import read_icorr_archive, LoadedArchive
 
-from components.correlation.orchestration.presenter import CorrelationPresenter
+from icorrvision.gui.correlation.presenter import CorrelationPresenter
 
-from components.preview.payload import QUANTITY_LABELS
-from components.preview.export import export_full_csv, export_summary_csv
+from icorrvision.results.payload import QUANTITY_LABELS
+from icorrvision.io.export import export_full_csv, export_summary_csv
 
-from components.preview.preview import CorrelationPreviewDialog
-from components.preview.presenter import PreviewPresenter
+from icorrvision.gui.preview.preview import CorrelationPreviewDialog
+from icorrvision.gui.preview.presenter import PreviewPresenter
 
 
 class _LoadWorker(QObject):

@@ -8,7 +8,7 @@ import tempfile
 import numpy as np
 import cv2
 
-from components.contracts import (
+from icorrvision.contracts import (
     CorrelationConfig,
     CorrelationFrame,
     CorrelationResult,
@@ -16,7 +16,7 @@ from components.contracts import (
     build_correlation_config,
 )
 
-from components.archive.manifest import MANIFEST_NAME, ROI_MASK_NAME, read_manifest
+from icorrvision.io.archive.manifest import MANIFEST_NAME, ROI_MASK_NAME, read_manifest
 
 STRAIN_COMPONENTS = ("exx", "eyy", "exy", "e1", "e2", "principal_angle_deg")
 

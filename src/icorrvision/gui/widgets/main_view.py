@@ -5,12 +5,12 @@ from PySide6.QtWidgets import (
     QSplitter,
     QSizePolicy,
 )
-from UI.mode_panel_view import ModePanelView
-from UI.bottom_panel_view import BottomPanelView
-from components.session.panel import SessionPanel
-from components.setup.panel import SetupPanel
-from components.correlation.panel import CorrelationPanel
-from components.menu.view import MenuBar
+from icorrvision.gui.widgets.mode_panel_view import ModePanelView
+from icorrvision.gui.widgets.bottom_panel_view import BottomPanelView
+from icorrvision.gui.session.panel import SessionPanel
+from icorrvision.gui.setup.panel import SetupPanel
+from icorrvision.gui.correlation.panel import CorrelationPanel
+from icorrvision.gui.menu.view import MenuBar
 
 
 class MainView(QMainWindow):

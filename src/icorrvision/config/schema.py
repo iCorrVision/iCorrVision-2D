@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Literal
-from components.contracts import (
+from icorrvision.contracts import (
     CorrelationConfig,
     validate_calibration,
     validate_grid_params,

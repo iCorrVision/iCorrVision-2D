@@ -5,9 +5,9 @@ from PySide6.QtCore import QObject, Slot, Signal
 from PySide6.QtGui import QImage, QPixmap
 from PySide6.QtWidgets import QMessageBox
 
-from components.session.panel import SessionPanel
-from components.session.folder import AmbiguousManifestError, FolderParser
-from components.contracts import CameraChannel
+from icorrvision.gui.session.panel import SessionPanel
+from icorrvision.io.folder import AmbiguousManifestError, FolderParser
+from icorrvision.contracts import CameraChannel
 
 
 class SessionPresenter(QObject):

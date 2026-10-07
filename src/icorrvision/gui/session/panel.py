@@ -15,9 +15,9 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import QPixmap
 
-from components.session.frame import SessionFrame
+from icorrvision.gui.session.frame import SessionFrame
 
-from UI.utils.utils import ask_export_folder, make_button
+from icorrvision.gui.widgets.utils.utils import ask_export_folder, make_button
 
 
 class SessionPanel(QWidget):

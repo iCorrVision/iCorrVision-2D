@@ -2,10 +2,10 @@ from PySide6.QtWidgets import QApplication, QSplashScreen
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtGui import QPixmap, QColor
 
-from UI.main_view import MainView
-from core.main_presenter import MainPresenter
+from icorrvision.gui.widgets.main_view import MainView
+from icorrvision.gui.main_presenter import MainPresenter
 
-from UI.utils.theme import THEME
+from icorrvision.gui.widgets.utils.theme import THEME
 
 
 class AppLoader:

@@ -35,7 +35,7 @@ Extending
 from importlib.metadata import PackageNotFoundError, version
 
 # --- Configuring -------------------------------------------------------------
-from components.contracts import (
+from icorrvision.contracts import (
     CorrelationConfig,
     InterpolationConfig,
     RecoveryConfig,
@@ -47,19 +47,19 @@ from components.contracts import (
 )
 
 # --- Running -----------------------------------------------------------------
-from components.config.loader import BuiltRun, build_run
-from components.session.folder import folder_loader
-from components.correlation.orchestration.factory import EngineBuildError, build_engine
+from icorrvision.config.loader import BuiltRun, build_run
+from icorrvision.io.folder import folder_loader
+from icorrvision.engine.factory import EngineBuildError, build_engine
 
 # --- Reading results ---------------------------------------------------------
-from components.archive.reader import LoadedArchive, read_icorr_archive
-from components.archive.writer import write_icorr_archive
-from components.contracts import CorrelationFrame, CorrelationResult, StrainField
-from components.preview.export import export_full_csv, export_summary_csv
+from icorrvision.io.archive.reader import LoadedArchive, read_icorr_archive
+from icorrvision.io.archive.writer import write_icorr_archive
+from icorrvision.contracts import CorrelationFrame, CorrelationResult, StrainField
+from icorrvision.io.export import export_full_csv, export_summary_csv
 
 # --- Extending ---------------------------------------------------------------
-from components.correlation.orchestration.engine import DisplacementField, ReferenceGrid
-from components.correlation.orchestration.factory import (
+from icorrvision.engine.engine import DisplacementField, ReferenceGrid
+from icorrvision.engine.factory import (
     CRITERION_REGISTRY,
     INTERPOLATOR_REGISTRY,
     REFINEMENT_REGISTRY,
@@ -67,19 +67,19 @@ from components.correlation.orchestration.factory import (
     SHAPE_FUNCTION,
     TENSOR_REGISTRY,
 )
-from components.correlation.pipeline.criteria import CorrelationCriterion
-from components.correlation.pipeline.interpolation import SubpixelInterpolator
-from components.correlation.pipeline.refinement import (
+from icorrvision.engine.pipeline.criteria import CorrelationCriterion
+from icorrvision.engine.pipeline.interpolation import SubpixelInterpolator
+from icorrvision.engine.pipeline.refinement import (
     DisplacementResult,
     SubpixelRefinement,
 )
-from components.correlation.pipeline.search import (
+from icorrvision.engine.pipeline.search import (
     InitialGuess,
     SearchRange,
     SearchStrategy,
 )
-from components.correlation.pipeline.shape_function import ShapeFunction
-from components.correlation.pipeline.tensors import StrainTensor
+from icorrvision.engine.pipeline.shape_function import ShapeFunction
+from icorrvision.engine.pipeline.tensors import StrainTensor
 
 try:
     # Read from the installed distribution's metadata so the version is written

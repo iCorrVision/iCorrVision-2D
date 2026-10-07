@@ -6,9 +6,9 @@ from PySide6.QtCore import QObject, Slot, Signal, QPointF, QLineF
 from PySide6.QtGui import QImage, QPixmap, QPainterPath
 from PySide6.QtWidgets import QFileDialog, QMessageBox
 
-from components.correlation.orchestration.engine import node_grid
-from components.setup.panel import SetupPanel
-from components.setup.roi_drawer import RoiModel, CanvasMode
+from icorrvision.engine.engine import node_grid
+from icorrvision.gui.setup.panel import SetupPanel
+from icorrvision.gui.setup.roi_drawer import RoiModel, CanvasMode
 
 
 def _compute_grid_nodes(

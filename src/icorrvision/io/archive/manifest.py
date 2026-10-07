@@ -10,7 +10,7 @@ import tomllib
 from dataclasses import asdict
 from datetime import datetime, timezone
 
-from components.contracts import CorrelationConfig, CorrelationResult, SetupOutput
+from icorrvision.contracts import CorrelationConfig, CorrelationResult, SetupOutput
 
 FORMAT_VERSION = 1
 

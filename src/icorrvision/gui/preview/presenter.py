@@ -8,24 +8,24 @@ from PySide6.QtCore import QObject, QThread, QUrl, Signal, Slot
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
 
-from components.archive.writer import write_icorr_archive
-from components.contracts import CorrelationConfig, CorrelationResult, SetupOutput
+from icorrvision.io.archive.writer import write_icorr_archive
+from icorrvision.contracts import CorrelationConfig, CorrelationResult, SetupOutput
 
-from .diagnostics import (
+from icorrvision.results.diagnostics import (
     frame_health,
     run_status_line,
     score_distribution,
     strain_percentiles,
     summary_lines,
 )
-from .export import export_full_csv
-from .payload import (
+from icorrvision.io.export import export_full_csv
+from icorrvision.results.payload import (
     STRAIN_COMPONENT_LABELS,
     ColorScale,
     build_payload,
     color_scale,
 )
-from .preview import CorrelationPreviewDialog
+from icorrvision.gui.preview.preview import CorrelationPreviewDialog
 
 
 class _SaveWorker(QObject):

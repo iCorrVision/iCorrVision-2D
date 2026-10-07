@@ -2,8 +2,8 @@ import logging
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import numpy as np
-from components.contracts import SearchConfig, SetupOutput
-from .criteria import CorrelationCriterion
+from icorrvision.contracts import SearchConfig, SetupOutput
+from icorrvision.engine.pipeline.criteria import CorrelationCriterion
 
 # The coarsest pyramid level must keep at least this many pixels per subset side: a
 # single pixel has no variance, so a zero-normalised criterion is undefined on it.

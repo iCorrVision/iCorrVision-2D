@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import numpy as np
 import scipy.ndimage as ndi
 
-from components.contracts import CorrelationFrame, CorrelationResult, HeatmapPayload
+from icorrvision.contracts import CorrelationFrame, CorrelationResult, HeatmapPayload
 
 STRAIN_COMPONENT_LABELS: dict[str, str] = {
     "e1": "Major principal strain (e1)",

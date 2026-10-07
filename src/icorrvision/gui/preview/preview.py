@@ -17,12 +17,12 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from components.contracts import HeatmapPayload
+from icorrvision.contracts import HeatmapPayload
 
-from .diagnostics import FrameHealth
-from .payload import ColorScale
-from .plots import PlotView
-from .render import HeatmapFigure
+from icorrvision.results.diagnostics import FrameHealth
+from icorrvision.results.payload import ColorScale
+from icorrvision.gui.preview.plots import PlotView
+from icorrvision.results.render import HeatmapFigure
 
 
 class _ResultTab(QWidget):

@@ -5,20 +5,20 @@ from dataclasses import dataclass
 import numpy as np
 from scipy.ndimage import binary_erosion
 
-from components.contracts import (
+from icorrvision.contracts import (
     CorrelationConfig,
     CorrelationFrame,
     CorrelationResult,
     SetupOutput,
 )
-from components.correlation.pipeline.search import (
+from icorrvision.engine.pipeline.search import (
     SearchStrategy,
     SearchRange,
     InitialGuess,
 )
-from components.correlation.pipeline.refinement import SubpixelRefinement
-from components.correlation.pipeline.tensors import StrainTensor
-from .recovery import HistoryRecovery, NodeHistory
+from icorrvision.engine.pipeline.refinement import SubpixelRefinement
+from icorrvision.engine.pipeline.tensors import StrainTensor
+from icorrvision.engine.recovery import HistoryRecovery, NodeHistory
 
 
 @dataclass

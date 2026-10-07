@@ -3,12 +3,12 @@ from dataclasses import dataclass, field
 import numpy as np
 import logging
 
-from components.contracts import RefinementConfig
+from icorrvision.contracts import RefinementConfig
 
-from .criteria import CorrelationCriterion, zero_mean_normalize
-from .interpolation import SubpixelInterpolator
-from .search import InitialGuess
-from .shape_function import ShapeFunction
+from icorrvision.engine.pipeline.criteria import CorrelationCriterion, zero_mean_normalize
+from icorrvision.engine.pipeline.interpolation import SubpixelInterpolator
+from icorrvision.engine.pipeline.search import InitialGuess
+from icorrvision.engine.pipeline.shape_function import ShapeFunction
 
 
 # Result of the sub-pixel refinement of one node

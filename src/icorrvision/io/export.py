@@ -4,9 +4,9 @@ from pathlib import Path
 
 import numpy as np
 
-from components.contracts import CorrelationFrame, CorrelationResult
+from icorrvision.contracts import CorrelationFrame, CorrelationResult
 
-from .diagnostics import frame_health
+from icorrvision.results.diagnostics import frame_health
 
 STRAIN_COLUMNS = ("exx", "eyy", "exy", "e1", "e2", "principal_angle_deg")
 

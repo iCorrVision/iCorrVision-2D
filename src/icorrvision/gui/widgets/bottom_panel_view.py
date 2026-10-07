@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
     QTabWidget,
 )
 
-from UI.console_view import ConsoleLogView
+from icorrvision.gui.widgets.console_view import ConsoleLogView
 
 
 class BottomPanelView(QWidget):

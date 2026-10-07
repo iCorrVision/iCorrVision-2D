@@ -1,9 +1,9 @@
 import logging
 from PySide6.QtCore import QObject, Signal
 
-from UI.console_view import ConsoleLogView
+from icorrvision.gui.widgets.console_view import ConsoleLogView
 
-from UI.utils.theme import THEME
+from icorrvision.gui.widgets.utils.theme import THEME
 
 _LEVEL_COLORS = {
     logging.DEBUG: THEME.log.debug,

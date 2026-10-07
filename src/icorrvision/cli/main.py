@@ -5,9 +5,9 @@ import time
 from contextlib import contextmanager
 import threading
 
-from components.config.loader import build_run
-from components.correlation.orchestration.factory import build_engine
-from components.archive.writer import write_icorr_archive, write_directory_output
+from icorrvision.config.loader import build_run
+from icorrvision.engine.factory import build_engine
+from icorrvision.io.archive.writer import write_icorr_archive, write_directory_output
 
 EXIT_SUCCESS = 0
 EXIT_ABORTED = 1

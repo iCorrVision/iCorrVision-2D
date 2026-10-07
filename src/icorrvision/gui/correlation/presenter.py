@@ -5,13 +5,13 @@ from typing import Callable
 import numpy as np
 from PySide6.QtCore import QObject, QThread, Signal, Slot
 
-from components.correlation.panel import CorrelationPanel
-from components.contracts import (
+from icorrvision.gui.correlation.panel import CorrelationPanel
+from icorrvision.contracts import (
     CorrelationConfig,
     CorrelationResult,
     SetupOutput,
 )
-from components.correlation.orchestration.factory import build_engine
+from icorrvision.engine.factory import build_engine
 
 
 class _CorrelationWorker(QObject):

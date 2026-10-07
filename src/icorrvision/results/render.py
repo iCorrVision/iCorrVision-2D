@@ -4,9 +4,9 @@ from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Colormap, Normalize
 from matplotlib.figure import Figure
 
-from components.contracts import HeatmapPayload
+from icorrvision.contracts import HeatmapPayload
 
-from .payload import ColorScale
+from icorrvision.results.payload import ColorScale
 
 
 class HeatmapFigure:

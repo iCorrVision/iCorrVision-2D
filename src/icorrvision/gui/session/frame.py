@@ -1,7 +1,7 @@
 from PySide6.QtCore import Signal, Qt
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel, QPushButton
 
-from UI.frame_display import FrameDisplay
+from icorrvision.gui.widgets.frame_display import FrameDisplay
 
 
 class SessionFrame(QWidget):

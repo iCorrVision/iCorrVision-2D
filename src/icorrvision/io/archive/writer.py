@@ -8,16 +8,16 @@ import numpy as np
 import tomli_w
 from matplotlib.figure import Figure
 
-from components.config.loader import BuiltRun
-from components.contracts import CorrelationConfig, CorrelationResult, SetupOutput
-from components.preview.export import export_full_csv
-from components.preview.payload import (
+from icorrvision.config.loader import BuiltRun
+from icorrvision.contracts import CorrelationConfig, CorrelationResult, SetupOutput
+from icorrvision.io.export import export_full_csv
+from icorrvision.results.payload import (
     QUANTITY_LABELS,
     build_payload,
     color_scale,
 )
-from components.preview.render import render_heatmap
-from components.archive.manifest import (
+from icorrvision.results.render import render_heatmap
+from icorrvision.io.archive.manifest import (
     MANIFEST_NAME,
     ROI_MASK_NAME,
     build_manifest,

@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from components.contracts import CorrelationFrame, CorrelationResult
+from icorrvision.contracts import CorrelationFrame, CorrelationResult
 
 
 @dataclass(frozen=True)

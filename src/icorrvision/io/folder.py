@@ -7,7 +7,7 @@ from collections.abc import Callable
 
 from pathlib import Path
 
-from components.contracts import ImageRecord
+from icorrvision.contracts import ImageRecord
 
 
 TIFF_SUFFIXES = (".tif", ".tiff")

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import numpy as np
-from components.contracts import RecoveryConfig
+from icorrvision.contracts import RecoveryConfig
 
 
 @dataclass

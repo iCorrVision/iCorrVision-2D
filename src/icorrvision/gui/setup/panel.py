@@ -13,10 +13,10 @@ from PySide6.QtWidgets import (
     QSplitter,
 )
 from PySide6.QtCore import QPointF, Signal, Qt
-from components.setup.roi_drawer import CanvasMode
-from components.setup.frame import SetupFrame
+from icorrvision.gui.setup.roi_drawer import CanvasMode
+from icorrvision.gui.setup.frame import SetupFrame
 from PySide6.QtGui import QPainterPath
-from UI.utils.utils import make_labeled_toggle
+from icorrvision.gui.widgets.utils.utils import make_labeled_toggle
 
 
 class SetupPanel(QWidget):
