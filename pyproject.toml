@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-gui = ["PySide6==6.10.2", "Pillow"]
+gui = ["PySide6>=6.10", "Pillow"]
 notebooks = ["jupyter>=1.1.1", "ipykernel>=7.3.0", "nbconvert", "pandas>=2.1"]
 acceleration = ["numba>=0.67", "pyopencl>=2026.1"]
 dev = ["black", "isort", "mypy", "scipy-stubs"]
