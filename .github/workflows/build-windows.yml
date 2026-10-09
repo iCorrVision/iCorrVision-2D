@@ -16,10 +16,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install -r requirements.txt pyinstaller
+      - run: pip install ".[gui]" pyinstaller
 
       - run: >
-          pyinstaller --onedir --collect-all PySide6
+          pyinstaller --onedir
           --name icorr-correlation
           --paths src
           src/icorrvision/gui/main.py

@@ -49,9 +49,10 @@
 
     venv = {
       enable = true;
-      # requirements.txt plus the project itself, installed in editable mode so that
-      # `import icorrvision` runs the code in src/. devenv runs pip from the project root.
-      requirements = builtins.readFile ./requirements.txt + "-e .\n";
+      # The project with every extra, installed in editable mode so that `import icorrvision`
+      # runs the code in src/; pyproject.toml lists the dependencies. devenv runs pip from the
+      # project root.
+      requirements = "-e .[gui,notebooks,acceleration,dev]\n";
     };
   };
 
