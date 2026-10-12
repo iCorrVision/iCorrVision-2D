@@ -5,8 +5,19 @@ from PySide6.QtWidgets import (
     QPushButton,
     QStyle,
     QFileDialog,
+    QFrame,
+    QScrollArea,
 )
 from typing import Callable
+
+
+def make_scrollable(content: QWidget) -> QScrollArea:
+    """Wrap `content` in a frameless scroll area that scrolls instead of squashing it."""
+    scroll = QScrollArea()
+    scroll.setWidget(content)
+    scroll.setWidgetResizable(True)  # fill the width; scroll only past the minimum
+    scroll.setFrameShape(QFrame.Shape.NoFrame)
+    return scroll
 
 
 def make_button(

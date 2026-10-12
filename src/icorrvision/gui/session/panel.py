@@ -17,7 +17,11 @@ from PySide6.QtGui import QPixmap
 
 from icorrvision.gui.session.frame import SessionFrame
 
-from icorrvision.gui.widgets.utils.utils import ask_export_folder, make_button
+from icorrvision.gui.widgets.utils.utils import (
+    ask_export_folder,
+    make_button,
+    make_scrollable,
+)
 
 
 class SessionPanel(QWidget):
@@ -63,7 +67,7 @@ class SessionPanel(QWidget):
         control_layout.addWidget(self._make_deformed_image_list())
         control_widget = QWidget()
         control_widget.setLayout(control_layout)
-        splitter.addWidget(control_widget)
+        splitter.addWidget(make_scrollable(control_widget))
         splitter.setStretchFactor(1, 1)
 
         outer_layout = QVBoxLayout(self)
