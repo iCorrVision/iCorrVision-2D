@@ -22,6 +22,9 @@ All notable changes to iCorrVision 2D are recorded here. Versions follow
   `pip install ".[gui]"` and the other extras (`notebooks`, `acceleration`, `dev`). The Windows
   executable is now built from `.[gui]`, the same dependencies a pip user gets. PySide6 is no
   longer pinned to 6.10.2 (now `>=6.10`).
+- The settings of the graphical application scroll instead of being squashed on small screens
+  (e.g. a 13-inch laptop at 150 % scaling), where the fields of the Correlation tab overlapped.
+  The Run group stays visible below the Correlation settings.
 
 ## 2.0.0 (tag `v2.0.0-msc`)
 
