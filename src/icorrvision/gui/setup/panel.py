@@ -16,7 +16,7 @@ from PySide6.QtCore import QPointF, Signal, Qt
 from icorrvision.gui.setup.roi_drawer import CanvasMode
 from icorrvision.gui.setup.frame import SetupFrame
 from PySide6.QtGui import QPainterPath
-from icorrvision.gui.widgets.utils.utils import make_labeled_toggle
+from icorrvision.gui.widgets.utils.utils import make_labeled_toggle, make_scrollable
 
 
 class SetupPanel(QWidget):
@@ -71,7 +71,7 @@ class SetupPanel(QWidget):
 
         splitter = QSplitter(Qt.Orientation.Horizontal)
         splitter.addWidget(self.frame)
-        splitter.addWidget(setup_widget)
+        splitter.addWidget(make_scrollable(setup_widget))
         splitter.setStretchFactor(0, 3)
         splitter.setStretchFactor(1, 1)
 

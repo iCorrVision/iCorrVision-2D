@@ -20,6 +20,7 @@ from icorrvision.engine.pipeline.search import (
     coarsest_pyramid_subset,
 )
 from icorrvision.engine.pipeline.tensors import minimum_cloud_radius
+from icorrvision.gui.widgets.utils.utils import make_scrollable
 from icorrvision.contracts import (
     CorrelationConfig,
     InterpolationConfig,
@@ -73,16 +74,22 @@ class CorrelationPanel(QWidget):
     }
 
     def __init__(self, parent=None) -> None:
-        """Stack the settings sections and the run controls."""
+        """Stack the settings sections in a scroll area above the run controls."""
         super().__init__(parent)
+        settings = QWidget()
+        settings_layout = QVBoxLayout(settings)
+        settings_layout.setContentsMargins(0, 0, 0, 0)  # the outer layout has margins
+        settings_layout.addWidget(self._make_criterion_settings())
+        settings_layout.addWidget(self._make_window_settings())
+        settings_layout.addWidget(self._make_refinement_settings())
+        settings_layout.addWidget(self._make_tracking_settings())
+        settings_layout.addWidget(self._make_strain_settings())
+        settings_layout.addWidget(self._make_recovery_settings())
+        settings_layout.addWidget(self._make_subpixel_settings())
+
+        # Run stays outside the scroll area so progress and Abort are always visible.
         layout = QVBoxLayout(self)
-        layout.addWidget(self._make_criterion_settings())
-        layout.addWidget(self._make_window_settings())
-        layout.addWidget(self._make_refinement_settings())
-        layout.addWidget(self._make_tracking_settings())
-        layout.addWidget(self._make_strain_settings())
-        layout.addWidget(self._make_recovery_settings())
-        layout.addWidget(self._make_subpixel_settings())
+        layout.addWidget(make_scrollable(settings))
         layout.addWidget(self._make_run_controls())
 
     # ------------------------------------------------------------------
