@@ -18,6 +18,10 @@ All notable changes to iCorrVision 2D are recorded here. Versions follow
 - `run.toml`, `template.toml` and the API tour moved to `examples/`, the validation notebooks to
   `validation/notebooks/` and the timing notebooks to `benchmarks/`.
 - The Windows build workflow also runs on pull requests to `main`.
+- `pyproject.toml` is the only list of dependencies; `requirements.txt` is removed. Install with
+  `pip install ".[gui]"` and the other extras (`notebooks`, `acceleration`, `dev`). The Windows
+  executable is now built from `.[gui]`, the same dependencies a pip user gets. PySide6 is no
+  longer pinned to 6.10.2 (now `>=6.10`).
 
 ## 2.0.0 (tag `v2.0.0-msc`)
 
