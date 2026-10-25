@@ -1,0 +1,58 @@
+name: Bug report
+description: Report something that does not work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please do not attach confidential data.
+  - type: input
+    id: version
+    attributes:
+      label: iCorrVision version or commit
+      description: Output of `python -c "import icorrvision; print(icorrvision.__version__)"`, or the commit hash.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Python version and operating system
+      placeholder: "Python 3.12, Ubuntu 24.04"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Where does it happen?
+      options:
+        - CLI (icorr)
+        - GUI
+        - Engine
+        - Configuration (TOML)
+        - Input/output
+        - Results
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: The TOML configuration or code that reproduces it. A small or synthetic image set helps (`examples/synthetic.py` generates one).
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+      description: Include error messages or tracebacks.
+    validations:
+      required: true
