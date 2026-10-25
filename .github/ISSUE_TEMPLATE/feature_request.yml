@@ -1,0 +1,28 @@
+name: Feature or method proposal
+description: Propose a new feature or a new DIC method
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What do you want to do that is not possible today?
+    validations:
+      required: true
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: Proposed behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference
+      description: For a new method (criterion, search, shape function, refinement, interpolator, strain tensor), cite the paper or source.
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to implement this and open a pull request.
