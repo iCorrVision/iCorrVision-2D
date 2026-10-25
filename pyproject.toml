@@ -9,7 +9,10 @@ description = "Modular subset-based 2D digital image correlation engine with a P
 readme = "README.md"
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
-authors = [{ name = "João Pedro da Silva Duarte Récio" }]
+authors = [
+    { name = "João Pedro da Silva Duarte Récio" },
+    { name = "José Manuel Cardoso Xavier" },
+]
 requires-python = ">=3.12"
 dependencies = [
     "numpy>=1.26",
@@ -27,6 +30,8 @@ dev = ["black", "isort", "mypy", "scipy-stubs"]
 
 [project.urls]
 Repository = "https://github.com/iCorrVision/iCorrVision-2D"
+Issues = "https://github.com/iCorrVision/iCorrVision-2D/issues"
+Changelog = "https://github.com/iCorrVision/iCorrVision-2D/blob/main/CHANGELOG.md"
 
 [project.scripts]
 icorr = "icorrvision.cli.main:main"

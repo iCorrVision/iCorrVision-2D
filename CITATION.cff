@@ -9,6 +9,9 @@ repository-code: "https://github.com/iCorrVision/iCorrVision-2D"
 authors:
   - family-names: "Récio"
     given-names: "João Pedro da Silva Duarte"
+  - family-names: "Xavier"
+    given-names: "José Manuel Cardoso"
+    orcid: "https://orcid.org/0000-0002-7836-4598"
 abstract: >-
   Version 2 of iCorrVision 2D: a subset-based two-dimensional digital image
   correlation (DIC) engine, usable as a Python package, from the command line or
