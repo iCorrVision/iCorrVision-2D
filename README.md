@@ -103,6 +103,15 @@ remains available.
 | 2 (2026) | iCorrVision Grabber | PySide6 | [iCorrVision/iCorrVision-Grabber](https://github.com/iCorrVision/iCorrVision-Grabber) |
 | 2, planned | iCorrVision 3D | | |
 
+## Contributing
+
+Contributions are welcome. Please read the organization's
+[contributing guide](https://github.com/iCorrVision/.github/blob/main/CONTRIBUTING.md) and
+[Code of Conduct](https://github.com/iCorrVision/.github/blob/main/CODE_OF_CONDUCT.md);
+[docs/development.md](docs/development.md) covers the setup, the code layout, how to add a method
+and the checks to run before a pull request. Report security problems privately as described in
+the [Security Policy](https://github.com/iCorrVision/.github/blob/main/SECURITY.md).
+
 ## Citation
 
 See `CITATION.cff`, or use GitHub's "Cite this repository" button. Please give the version
