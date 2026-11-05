@@ -45,8 +45,7 @@ def _generate_summary_plots(
             build_payload(result, quantity, last),
             color_scale(result, quantity, frame_index=last),
         )
-        name = "magnitude" if quantity == "magnitude" else f"strain_{quantity}"
-        figure.savefig(out_dir / f"{name}.png", dpi=150)
+        figure.savefig(out_dir / f"{quantity}.png", dpi=150)
 
 
 def _resize_max_dim(image: np.ndarray, max_dim: int) -> np.ndarray:
