@@ -13,12 +13,20 @@ STRAIN_COMPONENT_LABELS: dict[str, str] = {
     "exy": "Shear strain (exy)",
 }
 
+DISPLACEMENT_COMPONENT_LABELS: dict[str, str] = {
+    "u": "Horizontal displacement (u)",
+    "v": "Vertical displacement (v)",
+}
+
 QUANTITY_LABELS: dict[str, str] = {
     "magnitude": "Displacement magnitude",
     **STRAIN_COMPONENT_LABELS,
+    **DISPLACEMENT_COMPONENT_LABELS,
 }
+
 QUANTITY_UNITS: dict[str, str] = {
     "magnitude": "px",
+    **dict.fromkeys(DISPLACEMENT_COMPONENT_LABELS, "px"),
     **dict.fromkeys(STRAIN_COMPONENT_LABELS, "mm/mm"),
 }
 
@@ -73,9 +81,11 @@ class ColorScale:
 
 
 def quantity_values(frame: CorrelationFrame, quantity: str) -> np.ndarray:
-    """Grid-shaped values of `quantity`: "magnitude" or a strain component."""
+    """Grid-shaped values of `quantity`: "magnitude" or a strain or displacement component."""
     if quantity == "magnitude":
         return np.asarray(frame.magnitude_px, dtype=np.float64)
+    if quantity in DISPLACEMENT_COMPONENT_LABELS:
+        return np.asarray(getattr(frame, f"{quantity}_px"), dtype=np.float64)
     if quantity not in STRAIN_COMPONENT_LABELS:
         raise ValueError(f"unsupported quantity: {quantity!r}")
     if frame.strain is None:
