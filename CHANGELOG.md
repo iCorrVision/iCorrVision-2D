@@ -25,6 +25,8 @@ All notable changes to iCorrVision 2D are recorded here. Versions follow
 - The settings of the graphical application scroll instead of being squashed on small screens
   (e.g. a 13-inch laptop at 150 % scaling), where the fields of the Correlation tab overlapped.
   The Run group stays visible below the Correlation settings.
+- PNG summary plots are now named after their quantity only (was `strain_exx.png` and is now just `exx.png` for example).
+- Added the horizontal (u) and vertical (v) displacement components in pixels to the list of quantities in the preview. Summary plots now include them too.
 
 ## 2.0.0 (tag `v2.0.0-msc`)
 
